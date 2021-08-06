@@ -210,8 +210,8 @@ if __name__ == '__main__':
                 buffer_a = np.array(buffer_a)
                 buffer_r = np.array(buffer_r)
                 buffer_done = np.array(buffer_done)
-                discout_reward = calculate_discount_rewards_with_dones(buffer_r,buffer_done)     
-                # discout_reward = ppo.discount_reward(buffer_r, s_)          
+                # discout_reward = calculate_discount_rewards_with_dones(buffer_r,buffer_done)     
+                discout_reward = ppo.discount_reward(buffer_r, s_)          
                 ppo.update(buffer_s, buffer_a, discout_reward)           
                 buffer_s, buffer_a, buffer_r, buffer_done = [], [], [], []
 
